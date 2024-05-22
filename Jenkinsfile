@@ -1,6 +1,6 @@
 node {
   def dockerHubRepo = 'dauletovicazat@gmail.com/azat1990'
-  def dockerHubCredentialsId = 'Jenkins_Docker'
+  def dockerHubCredentialsId = 'github_third'
 
   stage("Clone the project") {
     git branch: 'master', url: 'https://github.com/azatdauletov/restApiDemo.git'
