@@ -20,14 +20,14 @@ node {
       sh "chmod +x ./gradlew"
       sh 'nohup ./gradlew bootRun -Dserver.port=8080 &'
       sh 'echo 1357924680azas | sudo docker login -u dauletovicazat@gmail.com --password-stdin'
-      sh 'sudo docker build -t azat1990/restapidemo:1.0 .'
+      sh 'sudo docker build -t azat1990/restapidemo:2.0 .'
     }
     stage('Push Docker Image') {
         script {
             docker.withRegistry('https://index.docker.io/v1/', dockerHubCredentialsId) {
-                def image = docker.image("azat1990/restapidemo:1.0")
+                def image = docker.image("azat1990/restapidemo:2.0")
                 image.push()
-                image.push('1.0')
+                image.push('2.0')
             }
         }
     }
