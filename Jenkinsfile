@@ -18,7 +18,7 @@ node {
     }
     stage("Deployment") {
       sh "chmod +x ./gradlew"
-      sh 'nohup ./gradlew bootRun -Dserver.port=8080 &'
+      sh 'nohup ./gradlew bootRun -Dserver.port=8081 &'
       sh 'echo 1357924680azas | sudo docker login -u dauletovicazat@gmail.com --password-stdin'
       sh 'sudo docker build -t azat1990/restapidemo:2.0 .'
     }
